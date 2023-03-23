@@ -2,9 +2,11 @@
 
 This is a movie app built using React and Redux that allows users to search for movies, view details about them, and add them to their favorites list. It uses the OMDb API to fetch movie data.
 
-- Hosted at:
+- Hosted at: https://movie-app017.netlify.app/
 
-- Demo:
+- Demo: 
+![image](https://user-images.githubusercontent.com/82697602/227150516-130f7547-bcbf-4724-93b1-59d07b2b7640.png)
+
 
 ### Features
 
