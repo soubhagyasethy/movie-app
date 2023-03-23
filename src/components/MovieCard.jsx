@@ -1,13 +1,13 @@
-import React from "react";
-import { addFavourite, removeFromFavourites } from "../actions";
+import React, { Component } from "react";
+import { addToFavourites, removeFromFavourites } from "../actions";
 
-class Navbar extends React.Component {
-  handleFavouritesClick = () => {
+class MovieCard extends Component {
+  handleFavouriteClick = () => {
     const { movie } = this.props;
-    this.props.dispatch(addFavourite(movie));
+    this.props.dispatch(addToFavourites(movie));
   };
 
-  handleUnFavouritesClick = () => {
+  handleUnFavouriteClick = () => {
     const { movie } = this.props;
     this.props.dispatch(removeFromFavourites(movie));
   };
@@ -17,25 +17,26 @@ class Navbar extends React.Component {
     return (
       <div className="movie-card">
         <div className="left">
-          <img src={movie.Poster} alt="movie poster" />
+          <img src={movie.Poster} alt="movie-pic" />
         </div>
         <div className="right">
-          <div className="title">{movie.Title}</div>
+          <div className="title">
+            {movie.Title} ({movie.Year})
+          </div>
           <div className="plot">{movie.Plot}</div>
           <div className="footer">
             <div className="rating">{movie.imdbRating}</div>
-
             {isFavourite ? (
               <button
                 className="unfavourite-btn"
-                onClick={this.handleUnFavouritesClick}
+                onClick={this.handleUnFavouriteClick}
               >
                 Unfavourite
               </button>
             ) : (
               <button
                 className="favourite-btn"
-                onClick={this.handleFavouritesClick}
+                onClick={this.handleFavouriteClick}
               >
                 Favourite
               </button>
@@ -47,4 +48,4 @@ class Navbar extends React.Component {
   }
 }
 
-export default Navbar;
+export default MovieCard;

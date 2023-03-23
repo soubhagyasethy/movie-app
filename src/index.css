@@ -97,7 +97,6 @@ body {
   box-sizing: border-box;
 }
 .main .tabs {
-  margin-bottom: 20px;
   display: flex;
   font-size: 20px;
 }
